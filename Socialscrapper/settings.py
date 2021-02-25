@@ -76,8 +76,12 @@ WSGI_APPLICATION = 'Socialscrapper.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'MyApp1',
+        'USER' : 'aroiutxs',
+        'PASSWORD': 'w5GkGoSHHaEKCuU-X2bT1CwB0gUdnDbs',
+        'HOST' : 'hansken.db.elephantsql.com',
+        'PORT' : '5432'
     }
 }
 

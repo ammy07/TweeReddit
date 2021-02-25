@@ -1,12 +1,58 @@
 {% extends 'home.html'%}
 {% block content %}
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+    <h1 align="right" style="font-family:'Courier New'; color: white ;"><b>Welcome!</b></h1>
+    <h2 align="right" style="font-family:'Courier New'; color: white ;">What do you want to do today?</h2>
+    <br/>
+
+    <meta charset="UTF-8">
+    <style>
+
+    body {
+     background-image: url('https://wallup.net/wp-content/uploads/2017/11/17/226076-Homer_Simpson.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+
+            }
+
+
+            .btn-info1:hover
+{
+   color: white;
+  transition-duration: 0.2s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  } /* Green */
+
+      .btn-info1
+{
+  background-color: #FF0000;
+     font-size: 16px;}
+
+
+
+
+.btn-info:hover
+{ font-size: 20px;
+  background-color: #4CAF50;
+  color: white;
+  transition-duration: 0.2s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  } /* Green */
+
+
+</style>
+</head>
 <br/>
+
 <div class="row">
     <div class="col-lg-6">
-        <a href="/tshow" class="btn btn-info" role="button">Proceed to Twitter Webapp</a>
+        <a href="/tshow" class="btn btn-info" role="button">Post on Twitter</a>
     </div>
     <div class="col-lg-6">
-        <a href="/rshow" class="btn btn-info" role="button">Proceed to Reddit Webapp</a>
+        <a href="/rshow" class="btn btn-info1" role="button">Post on Reddit</a>
+
     </div>
 </div>
 {% endblock %}

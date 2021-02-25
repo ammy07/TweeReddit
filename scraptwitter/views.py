@@ -6,20 +6,20 @@ from django.db.models import Max
 import datetime
 import praw
 # Create your views here.
-def home(request):
+def homepage(request):
     return render(request, 'specific_home.html')
 
-def TwitterShowData(request):
+def showTweets(request):
     TESTING = False
     if not TESTING:
-        #----------Authenticating webapp with Twitter-------------
+        # authenticating using unique keys
         consumer_key = keys["API key"]
         consumer_secret = keys["API key secret"]
         auth = tweepy.OAuthHandler(consumer_key, consumer_secret)
         auth.set_access_token(keys['Access token'], keys['Access token secret'])
         api = tweepy.API(auth)
 
-        #-----------Getting posts from twitter---------
+        # accessing posts
         tweets = api.user_timeline(screen_name=keys["userID"],
                                    count=200,
                                    include_rts=False,
@@ -48,7 +48,7 @@ def TwitterShowData(request):
     tweets = TwitterModel.objects.all().order_by('-created_at')
     return render(request, 'tweetshowGUI.html',{'records':tweets})
 
-def TwitterPostData(request):
+def postTweets(request):
     if (request.method == 'POST'):
         data = request.POST
         print(data,data['tweet'])
@@ -64,11 +64,11 @@ def TwitterPostData(request):
     return render(request, "tweetpost.html")
 
 
-def RedditShowData(request):
+def showReddit(request):
     posts = RedditModel.objects.all().order_by('-created_at')
     return render(request, 'postshowGUI.html',{'records':posts})
 
-def RedditPostData(request):
+def postReddit(request):
     if (request.method == 'POST'):
         data = request.POST
         print(data,data['title'],data['post'])
@@ -88,7 +88,7 @@ def RedditPostData(request):
             reddit.validate_on_submit = True
             print(subreddit.submit(title, selftext=selftext))
 
-        #-------Saving the post to db---------
+        # Save to db
         instance = RedditModel()
         instance.title = data['title']
         instance.post = data['post']

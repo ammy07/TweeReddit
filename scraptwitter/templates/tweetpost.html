@@ -1,17 +1,58 @@
 {% extends 'home.html'%}
 {% block content %}
+<head>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/js/all.min.js" crossorigin="anonymous"></script>
+
+    <meta charset="UTF-8">
+    <style>
+
+    body {
+     background-image: url('https://www.wallpapersdsc.net/wp-content/uploads/2015/11/1633.jpg');
+     background-repeat: no-repeat;
+     background-attachment: fixed;
+     background-size: cover;
+
+            }
+            .btn-info1:hover
+{
+   color: white;
+  transition-duration: 0.2s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  } /* Green */
+.button2 {background-color: #008CBA;} /* Blue */
+.form-group {
+    cursor: pointer;
+    color: #FFFF;
+    display: block;
+    padding: 10px;
+    margin: 3px;
+}
+
+.btn-info:hover
+{ font-size: 16px;
+  background-color: #4CAF50;
+  color: white;
+  transition-duration: 0.2s;
+  box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+  }
+
+
+</style>
+</head>
 <div class="container" >
     <br/>
-    <h2 align="center">Post New Tweet</h2>
+    <h2 align="center">Start posting now..</h2>
+
     <br/>
 <form action="" method="post">
     {% csrf_token %}
     <div class="form-group">
-        <label for="tweet"><h4>What's Happening ?</h4></label>
-        <textarea  id="tweet" style="height:100px" type="text" name="tweet"  class="form-control" placeholder="Enter the tweet"></textarea>
+        <label for="tweet"><h4>Hi! What's New?</h4></label>
+        <textarea  id="tweet" style="height:169px" type="text" name="tweet"  class="form-control" placeholder="Type here.."></textarea>
     </div>
     <br/>
-    <button type="submit" class="btn btn-info" >Proceed</button>
+
+    <button type="submit" class="btn btn-info" >Post</button>
 
 </div>
 
